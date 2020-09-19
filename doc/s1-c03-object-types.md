@@ -1,9 +1,9 @@
 ## Typy obiektów *Git'a*
 
-Obiekty *Git'a* zawierają rzeczywiste dane, i to właśnie one stanowią główny budulec repozytorium. 
-W *Git'cie* występują cztery główne typy obiektów, a pierwsze trzy są najważniejsze dla zrozumienia głównych funkcji *Git'a*.
+W obiektach *Git'a* zawarte są rzeczywiste dane i właśnie z nich składa się repozytorium. 
+Obiekty w *Git'cie* dzielimy na cztery typy główne, z których pierwsze trzy są kluczowe dla zrozumienia głównych funkcji *Git'a*.
 
-Wszystkie typy obiektów zapisywane są w **Bazie Obiektów**, która znajduje się w **Katalogu _Git'a_**. Każdy obiekt jest skompresowany (Zlib'em) i zaadresowany wartością SHA-1, wyliczaną z jego zawartości poprzedzonej małym nagłówkiem. W przykładach będę używał dla uproszczenia pierwszych 6 znaków ciągu SHA-1, ale w rzeczywistości zawsze mają one długość 40 znaków.
+Wszystkie typy obiektów zapisywane są w bazie obiektów, znajdującej się w **katalogu**<sup>1</sup> *Git'a*. Każdy obiekt jest skompresowany (Zlib'em) i zaadresowany wartością SHA-1, wyliczaną z jego zawartości poprzedzonej małym nagłówkiem. W przykładach będę używał dla uproszczenia pierwszych 6 znaków ciągu SHA-1, ale w rzeczywistości zawsze mają one długość 40 znaków.
 
 > SHA oznacza *Secure Hash Algorithm*. SHA zwraca dla konkretnej wartości unikalny i jednoznaczny identyfikator o stałej długości. 
 SHA-1 zastąpił SHA-0 i jest powszechnie używanym algorytmem.<br>
@@ -48,12 +48,12 @@ Rys. E - Drzewo po rozpakowaniu
 ---
 ### *Commit* (zatwierdzenie)
 
-No to, skoro możemy w *Git'cie* przechowywać określone drzewa zawartości, to skąd bieże się „historia” zawartości? Jaki jest „system przechowywania historii drzew”? Odpowiedzią jest obiekt typu *commit*.
+No więc, skoro możemy w *Git'cie* przechowywać określone drzewa zawartości, to skąd bieże się „historia” zawartości? Jaki jest „system przechowywania historii drzew”? Odpowiedzią jest obiekt typu *commit*.
 
 ![Rys. F](https://github.com/pluralsight/git-internals-pdf/blob/master/artwork/s1/commit.png)<br>
 Rys. F - *Commit*, jako wskaźnik drzewa
 
-*Commit* to bardzo prosty i podobny do drzewa obiekt. Po prostu jest wskaźnikiem do drzewa, a dodatkowo zawiera następujące dane: autor, zatwierdzający, wiadomość i dowolna lista rodziców – czyli *commit'ów* bezpośrednio poprzedzających ten *commit*.
+*Commit* to bardzo prosty i podobny do drzewa obiekt. Po prostu jest wskaźnikiem do drzewa, a dodatkowo zawiera następujące dane: *author* (autor), *commiter* (nazwa zatwierdzającego), *message* (opis *commit'u*) oraz dowolna lista rodziców – czyli *commit'ów* bezpośrednio poprzedzających ten *commit*.
 
 ![Rys. G](https://github.com/pluralsight/git-internals-pdf/blob/master/artwork/s1/commit-expand.png)<br>
 Rys. G - Pierwszy *commit* po rozpakowaniu
@@ -71,9 +71,13 @@ W większości przypadków *commit* będzie miał tylko jednego rodzica — tak 
 ---
 ### *Tag* (znacznik)
 
-Ostatnim typem obiektów, które znajdziesz w bazie danych *Git*, jest *znacznik*. Jest to obiekt, który pozwala nadać niezmienną skróconą nazwę konkretnemu *commit'owi*. Znacznik zawiera: wskaźnik obiektu, jego typ, oznaczenie, dane oznaczającego oraz wiadomość. Zazwyczaj, typem obiektu jest *commit*, a wskaźnikiem obiektu jest SHA-1 *commit'a* który oznaczasz. Znacznik może mieć również sygnaturę GPG, zapewniającą integralność kryptograficzną wydania lub wersji.
+Ostatnim typem obiektów, które znajdziesz w bazie danych *Git*, jest *znacznik*. Jest to obiekt, który pozwala nadać niezmienną skróconą nazwę konkretnemu *commit'owi*. Określa on: *object* (wskaźnik do obiektu oznaczanego), *type* (typ obiektu oznaczanego), *tag* (treść oznaczenia), *tagger* (nazwa oznaczającego) oraz wiadomość. Zazwyczaj, typem obiektu jest *commit*, wskaźnikiem obiektu jest SHA-1 *commit'a* który oznaczasz. Znacznik może mieć również sygnaturę GPG, zapewniającą integralność kryptograficzną wydania lub wersji.
 
 ![Rys. I](https://github.com/pluralsight/git-internals-pdf/blob/master/artwork/s1/tag-expand.png)<br>
-Rys. I - Znacznik, po rozpakowaniu
+Rys. I - Znacznik po rozpakowaniu
 
-O znacznikach oraz o tym, jak różnią się one od gałęzi (które również są wskaźnikami do *commit'ów*, ale nie są przechowywane jako obiekty) powiemy trochę więcej w następnej części. Tam również zbierzemy wszystko całość, aby dostrzec jak wszystkie obiekty są ze sobą powiązane funkcjonalnie.
+O znacznikach oraz o tym, jak różnią się one od gałęzi (które również są wskaźnikami do *commit'ów*, ale nie są przechowywane jako obiekty) powiemy trochę więcej w następnej części. Zbierzemy tam wszystko w całość, aby dostrzec, jak omówione obiekty są wzajemnie powiązane funkcjonalnie.
+
+
+<br><sup>____________________</sup>
+<br><sup>1</sup> standardowo, katalog *Git'a* to folder o nazwie .git
