@@ -17,8 +17,8 @@ Rys. A - Prosty projekt zawierający pliki i katalogi
 
 Zobaczmy co zrobi *Git*, gdy projekt ten zatwierdzimy do repozytorium.
 
-
-## *Blob* (obiekt binarny)
+---
+### *Blob* (obiekt binarny)
 
 W *Git'cie*, zawartości plików zapisywane są w *blob'ach*.
 
@@ -32,8 +32,8 @@ To oznacza, że jeśli gdziekolwiek w projekcie są dwa pliki, które zawierają
 ![Rys. C](https://github.com/pluralsight/git-internals-pdf/blob/master/artwork/s1/blob-expand.png)<br>
 Rys. C - Zawartość *blob'a* po rozpakowaniu
 
-
-## *Tree* (drzewo)
+---
+### *Tree* (drzewo)
 
 Katalogi mają w *Git'cie* prosty odpowiednik — *drzewa*.
 
@@ -45,8 +45,8 @@ Drzewo to zwykła lista przynależnych do niego poddrzew i *blob'ów*, wraz z ic
 ![Rys. E](https://github.com/pluralsight/git-internals-pdf/blob/master/artwork/s1/tree-expand.png)<br>
 Rys. E - Drzewo po rozpakowaniu
 
-
-## *Commit* (zatwierdzenie)
+---
+### *Commit* (zatwierdzenie)
 
 No to, skoro możemy w *Git'cie* przechowywać określone drzewa zawartości, to skąd bieże się „historia” zawartości? Jaki jest „system przechowywania historii drzew”? Odpowiedzią jest obiekt typu *commit*.
 
@@ -61,15 +61,15 @@ Rys. G - Pierwszy *commit* po rozpakowaniu
 Ponieważ był to mój pierwszy *commit*, lista rodziców jest pusta. Jeśli zrobię zatwierdzenie drugi raz, obiekt *commit* będzie wyglądał mniej więcej tak:
 
 ![Rys. H](https://github.com/pluralsight/git-internals-pdf/blob/master/artwork/s1/commit-expand2.png)<br>
-Rys. H - Następny/potomny *commit* po rozpakowaniu
+Rys. H - Następny (potomny) *commit* po rozpakowaniu
 
-Czy zauważyłeś, że w tym *commit'cie* rodzic określony jest właśnie takim samym SHA-1, jaki miał nasz poprzedni *commit*?
+Czy zauważyłeś, że w tym *commit'cie* rodzic określony jest takim samym SHA-1, jaki miał nasz poprzedni *commit*?
 W większości przypadków *commit* będzie miał tylko jednego rodzica — tak jak w naszym przykładzie, ale jeśli np. połączysz dwie gałęzie, powstały *commit* wskaże dwóch rodziców.
 
 > Obecny rekord w projekcie jądra systemu *Linux* wynosi 12 gałęzi scalonych w pojedynczy *commit*!
 
-
-## *Tag* (znacznik)
+---
+### *Tag* (znacznik)
 
 Ostatnim typem obiektów, które znajdziesz w bazie danych *Git*, jest *znacznik*. Jest to obiekt, który pozwala nadać niezmienną skróconą nazwę konkretnemu *commit'owi*. Znacznik zawiera: wskaźnik obiektu, jego typ, oznaczenie, dane oznaczającego oraz wiadomość. Zazwyczaj, typem obiektu jest *commit*, a wskaźnikiem obiektu jest SHA-1 *commit'a* który oznaczasz. Znacznik może mieć również sygnaturę GPG, zapewniającą integralność kryptograficzną wydania lub wersji.
 
