@@ -11,7 +11,7 @@ Jest stworzony do jednoczesnej pracy wielu osób, gdzie odgałęzienia projektu 
 *Git* został stworzony aby uprościć programowanie rozproszone. W *Git'cie* nie ma czegoś takiego jak repozytorium specjalne albo centralne - każdy klon jest w zasadzie równorzędny i właściwie mógłby w każdej chwili zastąpić inny. Może działać całkowicie offline lub z setkami zdalnych repozytoriów, do których można przesyłać / albo z których można pobierać, za pomocą kilku prostych i zestandaryzowanych protokołów.
 
 ### Wydajność
-*Git* jest bardzo wydajny. W porównaniu z wieloma innymi systemami SCM<sup>2</sup>, wydaje się wręcz niewiarygodnie szybki. 
+*Git* jest bardzo wydajny. W porównaniu z wieloma innymi systemami SCM, wydaje się wręcz niewiarygodnie szybki. 
 Większość operacji ma charakter lokalny, co redukuje niepotrzebne obciążenie sieci. 
 Repozytoria są zazwyczaj kompresowane bardzo wydajnie, czego skutkiem jest nierzadko ich zaskakująco mały rozmiar.
 
@@ -31,5 +31,4 @@ Hydraulika nie jest po to, by korzystać z niej w wierszu poleceń, lecz do wyko
 
 
 <br><sup>____________________</sup>
-<br><sup>1</sup> w sensie złożoności obliczeniowej
-<br><sup>2</sup> SCM — ang. Software Configuration Management
+<br><sup>1</sup> *przyp.* w sensie złożoności obliczeniowej
