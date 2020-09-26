@@ -12,4 +12,4 @@ Chociaż niektóre fragmenty straciły już na aktualności (np. rozdział dotyc
   - [Czym jest *Git*?](./doc/s1-c01-what-is-git.md)
   - [Ukierunkowanie i forma projektu](./doc/s1-c02-focus-design.md)
   - [Typy obiektów *Git'a*](./doc/s1-c03-object-types.md)
-  - [Model danych w *Git*](./doc/s1-c05-object-types.md)  
+  - [Model danych w *Git*](./doc/s1-c05-the-data-model.md)  
