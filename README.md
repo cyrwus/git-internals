@@ -1,7 +1,7 @@
 Celem projektu jest zebranie informacji o sposobie działania i mechanizmach systemu *Git*.
 
 Bieżącą gałąź przeznaczam w całości na rozwój tłumaczenia angielskojęzycznej książki pt. [*Git Internals – Source code control and beyond*](https://github.com/pluralsight/git-internals-pdf/blob/master/drafts/peepcode-git.pdf), 2008 r., autorstwa Scotta Chacona. 
-Chociaż niektóre fragmenty straciły już na aktualności (np. rozdział dotyczący instalacji systemu), to opis mechanizmów zaimplementowanych w „gicie” podany jest tam wyśmienicie! ;)
+Chociaż niektóre jej fragmenty straciły już na aktualności (np. rozdział dotyczący instalacji systemu), to opis mechanizmów zaimplementowanych w „gicie” podany jest tam w ciekawy i przystępny sposób.
 
 ## **Git od środka** – kontrola nad kodem źródłowym, i nie tylko
 
